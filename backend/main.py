@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers import health
+from app.routers import health, auth
 
 app = FastAPI()
 
@@ -21,3 +21,4 @@ def about():
 
 
 app.include_router(health.router, prefix="/api")
+app.include_router(auth.router, prefix="/api/auth")
